@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hcode Loader</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="loaders.css">
 </head>
 <body>
@@ -12,28 +13,78 @@
         npm init -y
         npm install jquery@3.4
     -->
-    <!--
-    <div id="loader" 
-    style="
-        width: 100%; 
-        height:100%;
-        background-color: rgba(230, 5, 61, 0.795);
-        position: fixed;
-        top: 0;
-        left: 0;
-        text-align: center;
-    ">
-        <div class="lds-dual-ring" style="
-        position:absolute;
-        top: 50%;
-        left:50%
-        "></div>
-    </div>
+
+    <!--dowload bootstrap
+        npm install bootstrap@4.0
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     -->
 
+    <div class="container">
+
+        <h1>Formulário de Cadastro</h1>
+
+        <form action="">
+
+            <div class="row">
+
+            <div class="col-6">
+
+                <div class="form-group">
+                    <label for="">Nome</label>
+                    <input type="text" placeholder="Digite seu nome" class="form-control">
+                    </div>
+                </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" placeholder="Digite seu Email" class="form-control">
+                </div>
+            </div>
+
+            </div>
+            <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">Idade</label>
+                    <input type="text" placeholder="Digite sua Idade" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">Mensagem</label>
+                    <textarea cols="30" rows="10" class="form-control"></textarea>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="form-group"> 
+                    <button type="submit" class="btn btn-primary">Enviar Formulário</button>
+                </div>
+            </div>
+        
+        </form>
+    </div>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./hcode_loader.js"></script>
+
+    <!--Acrescentar plugin-->
+   <script>
+       $(document).ready(function(){
+           //enviar
+        $('[type=submit').on('click', e =>{
+            //bloquear comportamento padrão
+            e.preventDefault() 
+
+            $('body').load("load", {
+                divClass: 'ring',
+                divQtd: 4
+            })
+        })
+       })
+   </script>
+
 
 </body>
 </html>

@@ -32,7 +32,7 @@
                          top: 0,
                          left: 0,
                          "text-align": "center",
-                         backgroundColor: "rgba(230, 5, 61, 0.795)"
+                         backgroundColor: "rgba(199, 212, 223, 0.4)"
                           
                          
                     })
@@ -58,9 +58,9 @@
                      $(divToAppend).append(divLoad);
                                         
                      //adicionar a div ao body
-                     $(this).append(divToAppend)
+                     $(this).append(divToAppend).hide().fadeIn()
                 
-
+                    //fadein adiciona agradavel
                 break;
 
                 case 'unload':
