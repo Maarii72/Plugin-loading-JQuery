@@ -8,9 +8,9 @@
 (function($){
 
     //nome do plugin
-    $.fn.load =function(action = 'load', params){
+    $.fn.load = function(action = 'load', params){
 
-        let defaults ={
+        let defaults = {
             divClass: 'dual-ring',
             divQtd: 0
         }
@@ -38,8 +38,8 @@
                     })
                     
                     
-                     let divLoad = document.createElement('div')
-                     divLoad.className = 'lds-' + options.divClass
+                     let divLoad = document.createElement('div');
+                     divLoad.className = 'lds-' + options.divClass;
          
                      $(divLoad).css({
                          position: "absolute",
@@ -48,7 +48,7 @@
                      })
 
                      //quanti divs
-                     for(let i =1; i<= options.divQtd; i++){
+                     for(let i = 1; i<= options.divQtd; i++){
                         $(divLoad).append('<div></div>');
                     }
 
@@ -56,16 +56,7 @@
                      //pegar a div load e adicionar dentro da div principal usando o método do jquery append
          
                      $(divToAppend).append(divLoad);
-
-                    
-
-                     <div class="lds-ring">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-
+                                        
                      //adicionar a div ao body
                      $(this).append(divToAppend)
                 
@@ -88,4 +79,6 @@
         })
     }
 })(jQuery)
+
+
 
